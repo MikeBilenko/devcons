@@ -1,0 +1,29 @@
+/* mixins.scss */
+
+/* Mobile devices (max-width: 480px) */
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+/* Tablet devices (max-width: 768px) */
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+/* Laptop devices (max-width: 1024px) */
+@mixin laptop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+/* Desktop (min-width: 1025px) */
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}

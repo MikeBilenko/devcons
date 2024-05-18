@@ -1,0 +1,66 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.footer {
+  box-sizing: unset;
+  display: block;
+  width: 100%;
+  padding: 2rem 0 2.8125rem;
+
+  background-color: $white;
+
+  color: $black;
+}
+
+.footerContent {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1240px;
+  width: 100%;
+  margin: 32px auto 96px;
+  gap: 105px;
+}
+
+.footerLogo {
+  width: 222px;
+  height: 27.72px;
+}
+
+.footerCopy {
+  max-width: 1240px;
+  width: 100%;
+  padding-top: 32px;
+  margin: 0 auto;
+  border-top: 1px solid $grey-100;
+
+  color: $grey;
+  font-size: 0.825rem;
+  font-weight: 500;
+  line-height: 1.1rem;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 145px;
+}
+
+.footerLinksColumn {
+  display: flex;
+  width: 150px;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footerLinksColumnTitle {
+  color: $grey;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.1rem;
+  text-align: left;
+}
+
+.footerLinksColumnList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
