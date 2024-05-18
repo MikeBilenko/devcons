@@ -1,12 +1,8 @@
 import React from "react";
-import "./styles/App.scss";
+import HomePage from "./pages";
 
 function App() {
-  return (
-    <div className="App">
-      <img src="/logo/logo.svg" alt="logo" />
-    </div>
-  );
+  return <HomePage />;
 }
 
 export default App;
