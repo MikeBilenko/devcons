@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 64px;
+  padding: 230px 0 64px;
+}
+
+.introLogo {
+  display: block;
+  max-width: 969px;
+}
+
+.introDescription {
+  white-space: pre-line;
+  height: 143px;
+  font-size: 3rem;
+  display: block;
+  text-align: center;
+  line-height: 77px;
+}
