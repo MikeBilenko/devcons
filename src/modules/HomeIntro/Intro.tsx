@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./styles.module.scss";
 import { TypeAnimation } from "react-type-animation";
+import HomeIntroCard from "components/HomeIntroCard/HomeIntroCard";
 
 const Intro: React.FC = () => {
   return (
@@ -17,6 +18,11 @@ const Intro: React.FC = () => {
           ]}
           repeat={0}
         />
+      </div>
+      <div className={classes.introCardsWrapper}>
+        <HomeIntroCard />
+        <HomeIntroCard />
+        <HomeIntroCard />
       </div>
     </div>
   );
