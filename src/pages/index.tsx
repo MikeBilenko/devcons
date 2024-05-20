@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../modules/Layout/Layout";
 import { Helmet } from "react-helmet";
-import Intro from "components/HomeIntro/Intro";
+import Intro from "modules/HomeIntro/Intro";
 
 const HomePage = () => {
   return (
