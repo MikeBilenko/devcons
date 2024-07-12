@@ -1,0 +1,64 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  color: $grey-500;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 22.4px;
+  text-align: left;
+
+  @include tablet {
+    width: 100%;
+    & > .customCheckbox {
+      margin-top: 3px;
+    }
+    align-items: flex-start;
+    & > span:last-child {
+      width: 80%;
+    }
+  }
+}
+
+.checkboxInput {
+  display: none;
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  background-color: $white;
+  border: 1px solid $grey-400;
+  border-radius: 3px;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.3s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid $white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.checkboxInput:checked + .customCheckbox {
+  background: $green-gradient;
+}
+
+.checkboxInput:checked + .customCheckbox:after {
+  display: block;
+}

@@ -1,0 +1,92 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.whys {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+
+  & > h1 {
+    max-width: 1133px;
+  }
+
+  @include tablet {
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+}
+
+.whyList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.whyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+
+  @include tablet {
+    gap: 14px;
+  }
+}
+
+.whyIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+
+  width: 81px;
+  height: 81px;
+  border-radius: 16px;
+
+  @include tablet {
+    width: 40px;
+    height: 40px;
+    border-radius: 7.9px;
+  }
+}
+
+.whyIcon {
+  display: block;
+  width: 56px;
+  height: 56px;
+
+  @include tablet {
+    width: 27.65px;
+    height: 27.65px;
+  }
+}
+
+.whyText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 713px;
+  width: 100%;
+}
+.whyTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 25.98px;
+  text-align: left;
+  background: $green-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include tablet {
+    font-size: 1rem;
+    line-height: 20.78px;
+  }
+}
+
+.whyDescription {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 20.78px;
+  text-align: left;
+}

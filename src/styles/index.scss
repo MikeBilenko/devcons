@@ -9,3 +9,7 @@ body {
   color: $white;
   font-size: 16px;
 }
+
+::selection {
+  background: $secondary-green;
+}

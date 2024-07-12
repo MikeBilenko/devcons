@@ -1,5 +1,5 @@
-@import "../../styles/variables.scss";
-@import "../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .intro {
   display: flex;
@@ -8,11 +8,22 @@
   flex-direction: column;
   gap: 64px;
   padding: 230px 0 64px;
+  margin-bottom: 200px;
+
+  @include tablet {
+    padding: 48px 0 0;
+    margin-bottom: 40px;
+  }
 }
 
 .introLogo {
   display: block;
   max-width: 969px;
+  width: 100%;
+
+  @include tablet {
+    max-width: 292px;
+  }
 }
 
 .introDescription {
@@ -22,11 +33,17 @@
   display: block;
   text-align: center;
   line-height: 77px;
+
+  @include tablet {
+    height: 109px;
+    font-size: 1.5rem;
+    line-height: 31.17px;
+  }
 }
 
 .introCardsWrapper {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: auto;
+  margin: 95px auto;
 }

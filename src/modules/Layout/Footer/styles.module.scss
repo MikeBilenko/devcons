@@ -10,6 +10,10 @@
   background-color: $white;
 
   color: $black;
+
+  @include tablet {
+    padding: 1.25rem 0 1rem;
+  }
 }
 
 .footerContent {
@@ -19,11 +23,22 @@
   width: 100%;
   margin: 32px auto 96px;
   gap: 105px;
+
+  @include tablet {
+    gap: 16px;
+    justify-content: center;
+    flex-direction: column;
+    margin: 16px auto 24px;
+  }
 }
 
 .footerLogo {
+  display: block;
   width: 222px;
   height: 27.72px;
+  @include tablet {
+    margin: 0 auto 20px;
+  }
 }
 
 .footerCopy {
@@ -37,11 +52,22 @@
   font-size: 0.825rem;
   font-weight: 500;
   line-height: 1.1rem;
+
+  @include tablet {
+    display: flex;
+    max-width: 380px;
+    text-align: center;
+    width: 100%;
+  }
 }
 
 .footerLinks {
   display: flex;
   gap: 145px;
+  @include tablet {
+    gap: 20px;
+    margin: auto;
+  }
 }
 
 .footerLinksColumn {
@@ -62,5 +88,6 @@
 .footerLinksColumnList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
+  margin-left: -12px;
 }
