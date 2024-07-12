@@ -1,0 +1,81 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  margin-top: 48px;
+
+  & > div:not(.images) {
+    width: 60%;
+    & > * {
+      text-align: left;
+    }
+  }
+
+  @include tablet {
+    flex-direction: column;
+    margin-top: 32px;
+    padding: 0 16px;
+
+    & > div:not(.images) {
+      width: 100%;
+    }
+  }
+}
+
+.description {
+  max-width: 627px;
+  width: 100%;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2rem;
+  text-align: left;
+
+  @include tablet {
+    font-size: 1rem;
+  }
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  & > img:first-child {
+    display: block;
+    width: 383.16px;
+    height: 259.46px;
+    border-radius: 24px;
+    transform: rotate(-4.32deg);
+  }
+  & > img:last-child {
+    margin-left: 120px;
+    display: block;
+    width: 383.16px;
+    height: 259.46px;
+    border-radius: 24px;
+    transform: rotate(+4.2deg);
+  }
+
+  @include tablet {
+    gap: 36px;
+
+    & > img:first-child {
+      display: block;
+      width: 333.58px;
+      height: 225.88px;
+      border-radius: 24px;
+      transform: rotate(-2.73deg);
+    }
+    & > img:last-child {
+      margin-left: 0;
+      display: block;
+      width: 333.58px;
+      height: 225.88px;
+      border-radius: 24px;
+      transform: rotate(+2.73deg);
+    }
+  }
+}

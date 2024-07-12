@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.servicesWrapper {
+  display: block;
+
+  padding: 64px 0;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 24px 0;
+  }
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  row-gap: 48px;
+
+  @include tablet {
+    display: flex;
+    height: 370px;
+    align-items: center;
+    padding: 0 15px;
+
+    width: 100%;
+    overflow-x: scroll;
+
+    @include hide-scrollbar;
+  }
+}

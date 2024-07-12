@@ -1,11 +1,18 @@
 @import "../../styles/variables.scss";
 
 .link {
+  box-sizing: border-box;
+  display: inline-flex;
+  width: fit-content;
+  padding: 9.5px 15px;
+
+  border: 1px solid transparent;
   text-decoration: none;
   color: $black;
+  border-radius: 57px;
 
   &:hover {
-    color: $primary-green;
+    border: 1px solid $black;
   }
 
   transition: all 0.1s ease;
@@ -14,9 +21,15 @@
   line-height: 1.1rem;
 
   &.headerLink {
-    background: $green-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 0.825rem;
+    & > span {
+      background: $green-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 0.825rem;
+    }
+
+    &:hover {
+      background-color: rgba($primary-green, 0.2);
+    }
   }
 }

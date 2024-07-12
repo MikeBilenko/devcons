@@ -1,0 +1,27 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.projects_wrapper {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 200px;
+
+  justify-content: center;
+
+  & > button {
+    margin: 50px auto 20px;
+    width: fit-content;
+  }
+}
+
+.projects_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 36px;
+  margin-bottom: 20px;
+
+  @include laptop {
+    grid-template-columns: 1fr;
+  }
+}

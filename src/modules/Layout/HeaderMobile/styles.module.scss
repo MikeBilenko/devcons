@@ -1,0 +1,109 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.headerMobile {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: $green-gradient-angle;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 88px 40px;
+  transform: translateY(100%);
+  transition: all 0.2s linear;
+
+  &.active {
+    transform: translateY(0);
+  }
+}
+
+.menuContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  gap: 48px;
+  padding: 88px 40px;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  & > div > a {
+    font-size: 1rem;
+    color: $white;
+    & > svg {
+      stroke: $white;
+
+      & > path {
+        stroke: $white !important;
+        color: $white;
+      }
+
+      & > g {
+        color: $white;
+        & > path {
+          stroke: $white;
+          color: $white;
+        }
+      }
+    }
+  }
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.menuIcon {
+  position: fixed;
+  bottom: 16px;
+  z-index: 20;
+  left: calc(50% - 24px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+
+  background: $green-gradient;
+
+  border-radius: 50%;
+  box-shadow: 0px 2px 13.8px -2px #66626229;
+
+  cursor: pointer;
+
+  transition: all 0.2s linear;
+
+  & > svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  &.active {
+    background: $white;
+    color: $primary-green;
+  }
+}
+
+.menuButton {
+  width: 180px;
+}

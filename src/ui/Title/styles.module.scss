@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.title {
+  display: block;
+  max-width: 838px;
+  width: 100%;
+  margin: 0 auto 72px;
+
+  color: $white;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 5rem;
+  text-align: center;
+
+  @include tablet {
+    font-size: 1.5rem;
+    margin: 0 auto 48px;
+    line-height: 31.17px;
+  }
+}
+
+.underlined {
+  background: $green-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

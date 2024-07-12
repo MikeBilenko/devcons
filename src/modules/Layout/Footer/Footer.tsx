@@ -21,7 +21,7 @@ const Footer = () => {
             <div className={classes.footerLinksColumnList}>
               <Link path="/about">About Us</Link>
               <Link path="/about">Services</Link>
-              <Link path="/about">Projects</Link>
+              {/* <Link path="/about">Projects</Link> */}
             </div>
           </div>
           <div className={classes.footerLinksColumn}>

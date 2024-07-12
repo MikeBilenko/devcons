@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.825rem;
+  font-weight: 500;
+  line-height: 22.33px;
+  text-align: left;
+  color: $grey-500;
+
+  cursor: pointer;
+
+  &:hover > .input {
+    border-color: $primary-green !important;
+  }
+}
+
+.input {
+  padding: 7px 16px 7px 16px;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid $grey-500;
+
+  font-family: "Reddit Mono", monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 25.52px;
+  text-align: left;
+  width: 100%;
+
+  transition: all 0.1s linear;
+
+  &::placeholder {
+    font-family: "Reddit Mono", monospace;
+  }
+
+  &:hover,
+  &:focus {
+    outline: $primary-green !important;
+    border-color: $primary-green !important;
+  }
+
+  &.error {
+    border-color: $red;
+    &:hover,
+    &:focus {
+      outline: $red !important;
+      border-color: $red !important;
+    }
+  }
+}
+
+.errorBlock {
+  color: $red;
+}

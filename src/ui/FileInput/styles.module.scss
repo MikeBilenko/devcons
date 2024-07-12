@@ -1,0 +1,57 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.fileInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px dashed $grey-600;
+  border-radius: 8px;
+
+  transition: all 0.1s ease;
+
+  cursor: pointer;
+  &.dragging {
+    border-color: $secondary-green;
+  }
+}
+
+.input {
+  display: none;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  color: $grey-500;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25.52px;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.helpText {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22.33px;
+  text-align: left;
+  color: $grey-450;
+}
+
+.fileSelected {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: $primary-green;
+  font-weight: bold;
+  font-size: 0.65rem;
+  & > svg {
+    font-size: 1rem;
+  }
+}

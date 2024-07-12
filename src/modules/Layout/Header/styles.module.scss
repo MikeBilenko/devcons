@@ -1,4 +1,5 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .header {
   display: flex;
@@ -7,10 +8,28 @@
   padding: 1.5rem 0;
 
   font-size: 0.875rem;
+
+  @include tablet {
+    padding: 1.5rem 0.5rem;
+    & > a > img {
+      width: 164px;
+      height: 20.35px;
+    }
+  }
 }
 
 .nav {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+
+  @include tablet {
+    & > a {
+      display: none;
+    }
+  }
+}
+
+.button {
+  padding: 10px 24px;
 }

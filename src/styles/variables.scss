@@ -1,7 +1,45 @@
 $white: #ffffff;
 $black: #181819;
 $green-gradient: linear-gradient(90deg, #139b8e 0%, #1aca5f 100%);
+$green-gradient-angle: linear-gradient(
+  136.87deg,
+  #1bb9ab 17.82%,
+  #22d96a 88.09%
+);
+$lighter-green-gradient: linear-gradient(
+  136.87deg,
+  #1bb9ab 17.82%,
+  #22d96a 88.09%
+);
+$reversed-green-gradient: linear-gradient(90deg, #1aca5f 0%, #139b8e 100%);
+$light-green-gradient: linear-gradient(
+  136.87deg,
+  rgba(19, 154, 142, 0.15) 17.82%,
+  rgba(26, 202, 95, 0.15) 88.09%
+);
+$green-gradient-100: linear-gradient(
+  136.87deg,
+  rgba(19, 154, 142, 0.05) 17.82%,
+  rgba(26, 202, 95, 0.05) 88.09%
+);
+$green-gradient-200: linear-gradient(
+  136.87deg,
+  rgba(19, 154, 142, 0.05) 17.82%,
+  rgba(26, 202, 95, 0.05) 88.09%
+);
 $primary-green: #139b8e;
 $secondary-green: #1aca5f;
 $grey-100: #ebebeb;
+$grey-200: #e6e6e6;
+$grey-300: #b4b4b4;
 $grey: #828282;
+$grey-400: #d3d3d3;
+$grey-450: #9f9f9f;
+$grey-500: #636363;
+$grey-600: #d5d5d5;
+$title: #293749;
+$shadow-light: #00000026;
+$shadow-dark: #0000004d;
+
+$grey-550: #737373;
+$red: red;

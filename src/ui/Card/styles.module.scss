@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 26px;
+  border-radius: 16px;
+
+  background-color: $white;
+  color: $title;
+
+  cursor: pointer;
+
+  &:nth-child(even) {
+    transform: rotate(2deg);
+  }
+
+  &:nth-child(odd) {
+    transform: rotate(-2deg);
+  }
+
+  transition: all 0.15s linear;
+
+  &:hover {
+    transform: rotate(0);
+    & > .introTitle {
+      transform: translateY(-100%) !important;
+    }
+
+    & > .introDescription {
+      transform: translateY(-100%) !important;
+    }
+  }
+
+  @include tablet {
+    min-width: 324px;
+    max-height: 202px;
+  }
+}
