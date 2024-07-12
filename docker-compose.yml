@@ -4,6 +4,6 @@ services:
       context: .
       dockerfile: ./Dockerfile # Ensure Dockerfile path is correct relative to context
     ports:
-      - "80:80"
+      - "3000:300"
     env_file:
       - .env
