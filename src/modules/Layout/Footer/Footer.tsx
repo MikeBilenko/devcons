@@ -20,16 +20,22 @@ const Footer = () => {
             <h3 className={classes.footerLinksColumnTitle}>Company</h3>
             <div className={classes.footerLinksColumnList}>
               <Link path="/about">About Us</Link>
-              <Link path="/about">Services</Link>
+              <Link path="/services">Services</Link>
               {/* <Link path="/about">Projects</Link> */}
             </div>
           </div>
           <div className={classes.footerLinksColumn}>
             <h3 className={classes.footerLinksColumnTitle}>Social Media</h3>
             <div className={classes.footerLinksColumnList}>
-              <Link path="/about">Facebook</Link>
-              <Link path="/about">Instagram</Link>
-              <Link path="/about">Linkedin</Link>
+              {/* <Link path="/about">Facebook</Link> */}
+              <Link
+                path="https://www.instagram.com/mbdevconsuting.insta/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram
+              </Link>
+              {/* <Link path="/about">Linkedin</Link> */}
             </div>
           </div>
         </div>

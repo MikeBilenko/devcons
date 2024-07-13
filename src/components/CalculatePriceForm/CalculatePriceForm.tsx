@@ -10,10 +10,10 @@ import { toast } from "react-toastify";
 const CalculatePriceForm: React.FC = () => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
-  // const [softwareSolutionError, setSoftwareSolutionError] = useState(false);
-  // const [developmentStageError, setDevelopmentStageError] = useState(false);
-  // const [consultationError, setConsultationError] = useState(false);
-  // const [durationError, setDurationError] = useState(false);
+  const [softwareSolutionError, setSoftwareSolutionError] = useState(false);
+  const [developmentStageError, setDevelopmentStageError] = useState(false);
+  const [consultationError, setConsultationError] = useState(false);
+  const [durationError, setDurationError] = useState(false);
 
   const [softwareSolution, setSoftwareSolution] = useState({
     tgBot: false,
@@ -41,6 +41,12 @@ const CalculatePriceForm: React.FC = () => {
     six_to_year: false,
     more_then_year: false,
   });
+
+  function validateState<T>(state: T): boolean {
+    return Object.values(state as Record<keyof T, boolean>).some(
+      (value) => value === true
+    );
+  }
 
   const handleCheckboxChange = (group: string, name: string) => {
     switch (group) {
@@ -95,32 +101,32 @@ const CalculatePriceForm: React.FC = () => {
       setEmailError(false);
     }
 
-    if (!validateEmail(email)) {
+    if (!validateState(softwareSolution)) {
       _error = true;
-      setEmailError(true);
+      setSoftwareSolutionError(true);
     } else {
-      setEmailError(false);
+      setSoftwareSolutionError(false);
     }
 
-    if (!validateEmail(email)) {
+    if (!validateState(developmentStage)) {
       _error = true;
-      setEmailError(true);
+      setDevelopmentStageError(true);
     } else {
-      setEmailError(false);
+      setDevelopmentStageError(false);
     }
 
-    if (!validateEmail(email)) {
+    if (!validateState(consultation)) {
       _error = true;
-      setEmailError(true);
+      setConsultationError(true);
     } else {
-      setEmailError(false);
+      setConsultationError(false);
     }
 
-    if (!validateEmail(email)) {
+    if (!validateState(duration)) {
       _error = true;
-      setEmailError(true);
+      setDurationError(true);
     } else {
-      setEmailError(false);
+      setDurationError(false);
     }
 
     if (_error) {
@@ -131,20 +137,44 @@ const CalculatePriceForm: React.FC = () => {
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
+    const formData = {
+      type: "",
+      stage: "",
+      consultation: "",
+      duration: "",
+    };
 
     if (!validateForm()) {
       return;
     }
+
+    if (softwareSolution.tgBot) formData.type = "Telegram Bot";
+    if (softwareSolution.web) formData.type = "Web";
+    if (softwareSolution.design) formData.type = "Design";
+    if (softwareSolution.consultancy) formData.type = "Consultancy needed";
+
+    if (developmentStage.idea) formData.stage = "Idea";
+    if (developmentStage.prototype) formData.stage = "Prototype/Specification";
+    if (developmentStage.designedSolution) formData.stage = "Designed solution";
+    if (developmentStage.mvp) formData.stage = "MVP";
+
+    if (consultation.projectManager) formData.consultation = "Project Manager";
+    if (consultation.businessAnalyst)
+      formData.consultation = "Business Analyst";
+    if (consultation.uiUxDesigner) formData.consultation = "UI/UX Designer";
+    if (consultation.developer) formData.consultation = "Developer";
+
+    if (duration.month) formData.duration = "1 month";
+    if (duration.month_to_six) formData.duration = "From 1 to 6 months";
+    if (duration.six_to_year) formData.duration = "From 6 to 12 months";
+    if (duration.more_then_year) formData.duration = "1 year +";
 
     axiosInstance
       .post(
         `api/v2/calculate-price/`,
         {
           email: email,
-          type: softwareSolution,
-          stage: developmentStage,
-          consultation: consultation,
-          duration: duration,
+          ...formData,
         },
         {
           headers: {
@@ -195,6 +225,11 @@ const CalculatePriceForm: React.FC = () => {
             }
           />
         </div>
+        {softwareSolutionError && (
+          <div className={classes.error}>
+            This field is required. Select one from above.
+          </div>
+        )}
         <div className={classes.formLabel}>
           2. What is the current stage of your software development process?
         </div>
@@ -224,6 +259,11 @@ const CalculatePriceForm: React.FC = () => {
             onChange={() => handleCheckboxChange("developmentStage", "mvp")}
           />
         </div>
+        {developmentStageError && (
+          <div className={classes.error}>
+            This field is required. Select one from above.
+          </div>
+        )}
         <div className={classes.formLabel}>
           3. Do you need a professional consultation from any of the specialists
           below?
@@ -256,6 +296,11 @@ const CalculatePriceForm: React.FC = () => {
             onChange={() => handleCheckboxChange("consultation", "developer")}
           />
         </div>
+        {consultationError && (
+          <div className={classes.error}>
+            This field is required. Select one from above.
+          </div>
+        )}
         <div className={classes.formLabel}>
           4. What is the expected duration of your project?
         </div>
@@ -281,6 +326,11 @@ const CalculatePriceForm: React.FC = () => {
             onChange={() => handleCheckboxChange("duration", "more_then_year")}
           />
         </div>
+        {durationError && (
+          <div className={classes.error}>
+            This field is required. Select one from above.
+          </div>
+        )}
 
         <div className={classes.submitForm}>
           <Input
@@ -292,7 +342,12 @@ const CalculatePriceForm: React.FC = () => {
             value={email}
             setValue={setEmail}
           />
-          <Button className={classes.big} type="submit">
+          <Button
+            className={`${classes.big} ${
+              emailError ? classes.errorButton : ""
+            }`}
+            type="submit"
+          >
             Get Pricing
           </Button>
         </div>

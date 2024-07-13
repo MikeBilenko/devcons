@@ -52,6 +52,10 @@
 .submitButton {
   padding: 11px 50px;
   width: fit-content;
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .formTitle {

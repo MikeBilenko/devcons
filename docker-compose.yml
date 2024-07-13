@@ -1,9 +1,0 @@
-services:
-  ui:
-    build:
-      context: .
-      dockerfile: ./Dockerfile # Ensure Dockerfile path is correct relative to context
-    ports:
-      - "3000:300"
-    env_file:
-      - .env

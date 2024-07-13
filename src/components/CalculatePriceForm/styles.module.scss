@@ -42,6 +42,10 @@
 
 .big {
   padding: 10px 53.5px;
+
+  &.errorButton {
+    margin-bottom: 30px;
+  }
 }
 
 .submitForm {
@@ -77,4 +81,8 @@
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.error {
+  color: $red;
 }

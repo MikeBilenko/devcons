@@ -7,11 +7,15 @@ const Link = ({
   variant,
   children,
   className,
+  target = "",
+  rel = "noreferrer",
 }: {
   path: string;
   variant?: string;
   children: React.ReactNode;
   className?: string;
+  target?: string;
+  rel?: "noreferrer";
 }) => {
   return (
     <CustomLink
@@ -19,6 +23,8 @@ const Link = ({
         variant === "header" ? classes.headerLink : ""
       } ${className}`}
       to={path}
+      rel={rel}
+      target={target}
     >
       {variant !== "header" && children}
       {variant === "header" && <span>{children}</span>}
