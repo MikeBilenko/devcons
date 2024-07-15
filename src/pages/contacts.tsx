@@ -8,8 +8,11 @@ const ContactUsPage = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Home</title>
-        <meta name="description" content="" />
+        <title>DEV Cons | Contact Us</title>
+        <meta
+          name="description"
+          content="We value your feedback and inquiries and will respond promptly. Thank you for choosing DEV Cons."
+        />
       </Helmet>
       <ContactForm />
     </Layout>

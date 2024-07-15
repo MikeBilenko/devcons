@@ -185,6 +185,32 @@ const CalculatePriceForm: React.FC = () => {
       .then((response) => {
         if (response) {
           setEmail("");
+          setSoftwareSolution({
+            tgBot: false,
+            web: false,
+            consultancy: false,
+            design: false,
+          });
+
+          setDevelopmentStage({
+            idea: false,
+            prototype: false,
+            designedSolution: false,
+            mvp: false,
+          });
+
+          setConsultation({
+            projectManager: false,
+            businessAnalyst: false,
+            uiUxDesigner: false,
+            developer: false,
+          });
+          setDuration({
+            month: false,
+            month_to_six: false,
+            six_to_year: false,
+            more_then_year: false,
+          });
           toast.success("Thanks for getting in touch!");
         }
       })

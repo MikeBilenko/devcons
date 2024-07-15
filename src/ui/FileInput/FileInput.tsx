@@ -5,15 +5,16 @@ import { FaFile } from "react-icons/fa";
 interface FileInputProps {
   label?: string;
   onFileSelect: (file: File) => void;
+  selectedFile: File | null;
 }
 
 const FileInput: React.FC<FileInputProps> = ({
   label = "Upload File",
   onFileSelect,
+  selectedFile,
 }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [dragging, setDragging] = useState(false);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -31,7 +32,7 @@ const FileInput: React.FC<FileInputProps> = ({
     const file = event.dataTransfer.files[0];
     if (file) {
       onFileSelect(file);
-      setSelectedFile(file);
+      // setSelectedFile(file);
     }
   };
 
@@ -39,7 +40,7 @@ const FileInput: React.FC<FileInputProps> = ({
     const file = event.target.files && event.target.files[0];
     if (file) {
       onFileSelect(file);
-      setSelectedFile(file);
+      // setSelectedFile(file);
     }
   };
 

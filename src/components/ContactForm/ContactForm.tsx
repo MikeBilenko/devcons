@@ -211,6 +211,7 @@ const ContactForm = () => {
           />
           <FileInput
             label="Drag and drop a file here"
+            selectedFile={selectedFile}
             onFileSelect={handleFileSelect}
           />
 
